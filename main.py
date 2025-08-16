@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 from itertools import islice
 from src.plot_handler import GridPaint
-from src.navigator import Navigator
+from src.navigator.grid2d import Grid2dNavigator
 from src.env_setter import EnvSetter
 
 
@@ -11,7 +11,7 @@ def main():
     start_color, end_color = (0.2,0.7,0.1), (1,0,0)
 
     env_setter = EnvSetter(width, height)
-    navigator = Navigator(width, height)
+    navigator = Grid2dNavigator(width, height)
 
     # 장애물 정의
     obstacles = env_setter.get_obstacles(black_list={start, goal})
