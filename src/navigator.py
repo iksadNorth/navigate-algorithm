@@ -19,8 +19,8 @@ class Navigator:
             f, g, node, history = heapq.heappop(queue)
 
             # 재방문 금지
-            if node in visited: continue
-            visited.add(node)
+            if self.hash(node) in visited: continue
+            visited.add(self.hash(node))
 
             # 장애물 or 경계
             if not self.validate_node(node): continue
@@ -55,6 +55,11 @@ class Navigator:
         (a, b), (x, y) = node, target
         # Manhattan 거리
         return ( (x - a)**2 + (y - b)**2 )**0.5 * 1.2
+
+    def hash(self, node):
+        """노드를 식별할 수 있는 해시값. 동일하면 같은 노드로 인식할 수 있음
+        """
+        return node
 
     def cost_step(self, node, next_node):
         """경로 이동 시, 소요되는 이동 비용
