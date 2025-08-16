@@ -54,7 +54,7 @@ class Navigator:
         """
         (a, b), (x, y) = node, target
         # Manhattan 거리
-        return ( (x - a)**2 + (y - b)**2 )**0.5
+        return ( (x - a)**2 + (y - b)**2 )**0.5 * 1.2
 
     def cost_step(self, node, next_node):
         """경로 이동 시, 소요되는 이동 비용
