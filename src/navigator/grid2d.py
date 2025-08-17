@@ -3,7 +3,8 @@ from src.navigator.base import Navigator
 
 class Grid2dNavigator(Navigator):
     def __init__(self, width, height) -> None:
-        super().__init__(width, height)
+        self.width = width
+        self.height = height
     
     def set_obstacles(self, obstacles = set()):
         self.obstacles = set(obstacles)

@@ -2,8 +2,8 @@ from src.navigator.base import Navigator
 
 
 class WeightGraphNavigator(Navigator):
-    def __init__(self, width, height) -> None:
-        super().__init__(width, height)
+    def __init__(self) -> None:
+        super().__init__()
     
     def set_graph(self, graph = dict()):
         self.graph = dict(graph)
